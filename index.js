@@ -59,7 +59,7 @@ app.get('/api/persons/:id', (request, response, next) => {
     .catch(error => next(error))
 })
 
-app.delete('/api/persons/:id', (request, response) => {
+app.delete('/api/persons/:id', (request, response, next) => {
     Person.findByIdAndRemove(request.params.id)
         .then(result => {
             response.status(204).end()
@@ -67,13 +67,22 @@ app.delete('/api/persons/:id', (request, response) => {
         .catch(error => next(error))
 })
 
-const generateId = () => {
-    const maxId = persons.length > 0
-      ? Math.max(...persons.map(n => n.id))
-      : 0
-    return maxId + 1
-}
   
+app.put('/api/persons/:id', (request, response, next) => {
+    const body = request.body
+
+    const person = {
+        name: body.name,
+        number: body.number,
+    }
+    
+    Person.findOneAndUpdate(request.params.id, person, {new: true})
+            .then(updatedPerson => {
+                response.json(updatedPerson)
+            })
+            .catch(error => next(error))
+})
+
 app.post('/api/persons', (request, response) => {
     const body = request.body
 
@@ -85,16 +94,11 @@ app.post('/api/persons', (request, response) => {
         return response.status(400).json({
             error: 'number missing'
         })
-    } else if (persons.filter(each => each.name == body.name).length != 0) {
-        return response.status(400).json({
-            error: 'name must be unique'
-        })
-    }
+    } 
 
     const person = new Person({
         name: body.name,
         number: body.number,
-        id: generateId(),
     })
 
     person.save().then(savedPerson => {
