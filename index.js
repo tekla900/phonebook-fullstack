@@ -1,7 +1,8 @@
 const express = require('express')
 const app = express()
-let morgan = require('morgan')
+const morgan = require('morgan')
 const cors = require('cors')
+
 morgan.token('body', (req, res) => JSON.stringify(req.body));
 
 app.use(express.static('build'))
