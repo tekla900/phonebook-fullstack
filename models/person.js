@@ -19,7 +19,7 @@ const personSchema = new mongoose.Schema({
     required: true 
   },
   number: {
-    type: Number,
+    type: String,
     minLength: 8,
     required: true,
     validate: {
