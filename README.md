@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
 
 ### Links
 
@@ -34,13 +34,10 @@ Users should be able to:
 ## My process
 
 ### Built with
-- **Frontend**
 - React
 - JS
-- **Backend**
 - Node.js
 - MongoDB
-- 
 - nodemon
 - morgan
 - Eslint
