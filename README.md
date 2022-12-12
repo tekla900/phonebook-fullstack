@@ -1,6 +1,6 @@
 # Phonebook Fullstack
 
-## Made for [fullstackopen] (https://fullstackopen.com/) 
+## Made for [fullstackopen](https://fullstackopen.com/) 
 
 ## Table of contents
 
