@@ -29,7 +29,6 @@ Users should be able to:
 ### Links
 
 - Solution URL: [GitHub](https://github.com/tekla900/phonebook-fullstack)
-- Live Site URL: [Fly.io](https://black-wind-8440.fly.dev/)
 
 ## My process
 
@@ -37,11 +36,11 @@ Users should be able to:
 - React
 - JS
 - Node.js
+- Express
 - MongoDB
 - nodemon
 - morgan
 - Eslint
-- Leaflet JS
 
 ### Useful resources
 - [morgan](https://github.com/expressjs/morgan) - morgan logger middleware function documentation 
